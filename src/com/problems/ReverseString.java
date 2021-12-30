@@ -12,4 +12,6 @@ public class ReverseString {
             System.out.print(charArray[i]);
         }
     }
+    //O(n)
+    //String Buffer could be used as well instead of char Array, but I suppose space complexity would be more.
 }
