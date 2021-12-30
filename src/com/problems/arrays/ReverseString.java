@@ -1,4 +1,4 @@
-package com.problems;
+package com.problems.arrays;
 
 public class ReverseString {
     public static void main(String[] args) {
