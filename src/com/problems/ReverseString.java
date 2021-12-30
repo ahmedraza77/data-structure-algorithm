@@ -3,14 +3,13 @@ package com.problems;
 public class ReverseString {
     public static void main(String[] args) {
         String sentence = "This is a lovely day";
-        System.out.println(reverseString(sentence));
+        reverseString(sentence);
     }
 
-    public static String reverseString(String sentence){
-        StringBuilder reversedString = new StringBuilder();
-        for(int i=sentence.length()-1; i>=0; i--) {
-            reversedString.append(sentence.charAt(i));
+    public static void reverseString(String sentence){
+        char[] charArray = sentence.toCharArray();
+        for (int i=charArray.length-1; i>=0; i--) {
+            System.out.print(charArray[i]);
         }
-        return reversedString.toString();
     }
 }
