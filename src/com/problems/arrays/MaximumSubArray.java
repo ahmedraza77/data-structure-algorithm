@@ -5,10 +5,10 @@ public class MaximumSubArray {
 
         int a[] = {-2, -3, 4, -1, -2, 1, 5, -3};
         System.out.println("Maximum contiguous sum is "
-                + maxSubArraySum(a, a.length));
+                + maxSubArraySum(a));
     }
 
-    private static int maxSubArraySum(int[] a, int length) {
+    private static int maxSubArraySum(int[] a) {
         int max = a[0];
         int curr_max = a[0];
 

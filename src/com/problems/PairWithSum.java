@@ -7,7 +7,6 @@ public class PairWithSum {
         int[] array1 = {4,8,1,8,3,4};
         int[] array2 = {-4,2,1,12};
         final int sum = 8;
-
         System.out.println(checkSumPair(array2, sum));
     }
 
