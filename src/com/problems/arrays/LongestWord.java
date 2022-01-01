@@ -20,4 +20,6 @@ public class LongestWord {
         }
         return longest;
     }
+
+    // To avoid punctuation => regex used: "[&!._,'@? ]"
 }
