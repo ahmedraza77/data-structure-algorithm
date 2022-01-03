@@ -1,0 +1,86 @@
+package com.implementation.linkedlist;
+
+public class SinglyLinkedList {
+    Node head;
+    int length;
+
+    SinglyLinkedList(int value) {
+        this.head = new Node(value);
+        length++;
+    }
+
+    public void prepend(int value) {
+        Node newNode = new Node(value);
+        newNode.next = head;
+        head = newNode;
+        length++;
+    }
+
+    public void append (int value) {
+        Node newNode = new Node(value);
+        if(head.next==null){
+            head.next = newNode;
+            length++;
+            return;
+        }
+        Node currentNode = head;
+        while(currentNode.next!=null){
+            currentNode = currentNode.next;
+        }
+        currentNode.next = newNode;
+        length++;
+    }
+
+    public void insert(int index, int value) {
+        if(index>=length){
+            append(value);
+            return;
+        }
+        Node newNode = new Node(value);
+        Node leftNode = traverseToNode(index-1);
+        newNode.next = leftNode.next;
+        leftNode.next = newNode;
+        length++;
+    }
+
+    public void remove(int index) {
+        Node leftNode = traverseToNode(index-1);
+        Node unwantedNode = leftNode.next;
+        leftNode.next = unwantedNode.next;
+        length--;
+    }
+
+    public Node traverseToNode(int index) {
+        Node currentNode = head;
+        for (int i=0; i<index; i++) {
+            currentNode = currentNode.next;
+        }
+        return currentNode;
+    }
+
+    public void printList() {
+        int[] arr = new int[length];
+        Node currentNode = head;
+        for (int i=0; i<length; i++) {
+            arr[i] = currentNode.data;
+            currentNode = currentNode.next;
+        }
+        for (int i : arr) {
+            System.out.print(i + " -> ");
+        }
+        System.out.println();
+        System.out.println(head);
+    }
+
+
+    public static void main(String[] args) {
+        SinglyLinkedList myLinkedList = new SinglyLinkedList(10);
+        myLinkedList.append(14);
+        myLinkedList.prepend(6);
+        myLinkedList.prepend(8);
+        myLinkedList.insert(2, 9);
+        myLinkedList.remove(3);
+        myLinkedList.printList();
+
+    }
+}

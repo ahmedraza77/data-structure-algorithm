@@ -1,4 +1,4 @@
-package com.implementation;
+package com.implementation.hashTable;
 
 public class MyHashTable {
     int[] data;
