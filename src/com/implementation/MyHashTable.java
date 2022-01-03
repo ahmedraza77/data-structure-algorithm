@@ -44,6 +44,7 @@ public class MyHashTable {
         int index = myHashing(key);
         if(data[index]!=0){
             data[index] = 0;
+            size--;
         }
 
     }
