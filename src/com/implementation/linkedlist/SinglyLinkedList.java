@@ -9,6 +9,7 @@ public class SinglyLinkedList {
         length++;
     }
 
+    //O(1)
     public void prepend(int value) {
         Node newNode = new Node(value);
         newNode.next = head;
@@ -16,6 +17,7 @@ public class SinglyLinkedList {
         length++;
     }
 
+    //O(1)
     public void append (int value) {
         Node newNode = new Node(value);
         if(head.next==null){
@@ -31,6 +33,7 @@ public class SinglyLinkedList {
         length++;
     }
 
+    //O(n)
     public void insert(int index, int value) {
         if(index>=length){
             append(value);
@@ -43,6 +46,7 @@ public class SinglyLinkedList {
         length++;
     }
 
+    //O(n)
     public void remove(int index) {
         Node leftNode = traverseToNode(index-1);
         Node unwantedNode = leftNode.next;
@@ -50,6 +54,7 @@ public class SinglyLinkedList {
         length--;
     }
 
+    //O(n)
     public Node traverseToNode(int index) {
         Node currentNode = head;
         for (int i=0; i<index; i++) {
@@ -81,6 +86,5 @@ public class SinglyLinkedList {
         myLinkedList.insert(2, 9);
         myLinkedList.remove(3);
         myLinkedList.printList();
-
     }
 }

@@ -16,6 +16,7 @@ public class MyHashTable {
         return hash;
     }
 
+    //O(1) - Until Collision
     public boolean set(String key, int value) {
         int index = myHashing(key);
         if(data[index]!=0) {
@@ -29,6 +30,7 @@ public class MyHashTable {
         }
     }
 
+    //O(1) - Until Collision
     public int get(String key) {
         int index = myHashing(key);
         if(data[index]!=0) {
@@ -40,6 +42,7 @@ public class MyHashTable {
         }
     }
 
+    //O(1)
     public void remove(String key) {
         int index = myHashing(key);
         if(data[index]!=0){
