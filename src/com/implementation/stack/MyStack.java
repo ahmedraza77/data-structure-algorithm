@@ -17,13 +17,15 @@ public class MyStack {
         return 0;
     }
 
-    public void pop() {
+    public Node pop() {
         if(top==null) {
-            return;
+            return null;
         }
         else{
+            Node unwantedNode = top;
             top = top.getNext();
             length--;
+            return unwantedNode;
         }
     }
 
