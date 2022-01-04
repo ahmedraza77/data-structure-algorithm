@@ -63,6 +63,23 @@ public class SinglyLinkedList {
         return currentNode;
     }
 
+    public Node reverseList() {
+        if(length==1) {
+            return head;
+        }
+        Node first = head;
+        Node second = first.next;
+        while (second!=null) {
+            Node temp = second.next;
+            second.next = first;
+            first = second;
+            second = temp;
+        }
+        head.next = null;
+        head = first;
+        return head;
+    }
+
     public void printList() {
         int[] arr = new int[length];
         Node currentNode = head;
@@ -74,7 +91,7 @@ public class SinglyLinkedList {
             System.out.print(i + " -> ");
         }
         System.out.println();
-        System.out.println(head);
+        //System.out.println(head);
     }
 
 
@@ -85,6 +102,8 @@ public class SinglyLinkedList {
         myLinkedList.prepend(8);
         myLinkedList.insert(2, 9);
         myLinkedList.remove(3);
+        myLinkedList.printList();
+        myLinkedList.reverseList();
         myLinkedList.printList();
     }
 }
