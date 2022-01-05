@@ -7,8 +7,8 @@ public class TreeNode {
 
     public TreeNode(int value) {
         this.value = value;
-        this.left = null;
-        this.right = null;
+        left = null;
+        right = null;
     }
 
     @Override
