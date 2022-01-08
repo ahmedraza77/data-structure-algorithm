@@ -1,5 +1,9 @@
 package com.algorithms.sorting;
-
+/*
+ *  Time Complexity O(n logn)
+ *  Worst Case & Best Case All Same - U could be sure of the performance
+ *  Space Complexity ->  O(n)
+ * */
 public class MergeSort {
     public static int[] mergeSort(int[] arr) {
 

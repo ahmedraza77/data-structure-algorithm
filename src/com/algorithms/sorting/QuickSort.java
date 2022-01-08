@@ -1,5 +1,10 @@
 package com.algorithms.sorting;
 
+/*
+*  Time Complexity O(n logn)
+*  Worst Case: When pivot is largest or smallest ->  O(n^2)
+*  Space Complexity ->  O(logn)
+* */
 public class QuickSort {
 
     public static void sorting(int[] arr) {
