@@ -1,10 +1,10 @@
 package com.implementation.tree;
 
 public class MyBinarySearchTree {
-    TreeNode root;
-    int size;
+    public TreeNode root;
+    public int size;
 
-    MyBinarySearchTree() {
+    public MyBinarySearchTree() {
         this.root = null;
         this.size = 3;
     }
@@ -67,9 +67,9 @@ public class MyBinarySearchTree {
         tree.insert(6);
         tree.insert(20);
         tree.printTree();
-//        tree.insert(170);
-//        tree.insert(15);
-//        tree.insert(1);
+        tree.insert(170);
+        tree.insert(15);
+        tree.insert(1);
 
         System.out.println(tree.lookup(20));
     }

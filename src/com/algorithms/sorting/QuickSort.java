@@ -17,7 +17,7 @@ public class QuickSort {
         if (end - start < 2) {
             return;
         }
-        int pivotIndex = partition(arr, start, end);
+        int pivotIndex = partition2(arr, start, end-1);
         quickSort(arr, start, pivotIndex);
         quickSort(arr, pivotIndex+1, end);
     }
@@ -40,6 +40,32 @@ public class QuickSort {
         }
         arr[j] = pivot;
         return j;
+    }
+
+    public static int partition2(int[] arr, int low, int high) {
+        int pivot = arr[high];
+        int i = (low-1); // index of smaller element
+        for (int j=low; j<high; j++)
+        {
+            // If current element is smaller than or
+            // equal to pivot
+            if (arr[j] <= pivot)
+            {
+                i++;
+
+                // swap arr[i] and arr[j]
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+
+        // swap arr[i+1] and arr[high] (or pivot)
+        int temp = arr[i+1];
+        arr[i+1] = arr[high];
+        arr[high] = temp;
+
+        return i+1;
     }
 
     public static void main(String[] args) {
