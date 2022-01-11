@@ -20,7 +20,6 @@ public class Fibonacci {
         return arr[index];
     }
 
-    static int value;
     // O(2^n) => Exponential Time Complexity. Worse than O(N^2)
     public static int fibonacciRecursive(int index) {
         if(index<2){
