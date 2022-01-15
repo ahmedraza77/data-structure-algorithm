@@ -3,6 +3,12 @@ package com.problems.practice;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+/*
+* Fizzbuzz
+* Single Number out of duplicates (Binary Search)
+* Add two nums without + operator (Bitwise)
+* Excel Column Number corresponding Column title
+* */
 
 public class Randoms {
     public static List<String> fizzbuzz(int n) {
@@ -70,6 +76,7 @@ public class Randoms {
         return sum;
     }
 
+
     public static void main(String[] args) {
 
 //        List<String> list = fizzbuzz(3);
@@ -78,7 +85,7 @@ public class Randoms {
   //      System.out.println(singleNumber(new int[] {2,2,1,6,7,6,8,8,7}));
   //      System.out.println(Add(4, 8));
 
-        columnNumber("AAA");
+        columnNumber("BZ");
 
     }
 }
