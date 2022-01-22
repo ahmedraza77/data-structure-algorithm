@@ -8,6 +8,8 @@ import java.util.List;
 * Single Number out of duplicates (Binary Search)
 * Add two nums without + operator (Bitwise)
 * Excel Column Number corresponding Column title
+* House Robber
+* Count And Say
 * */
 
 public class Randoms {
@@ -76,6 +78,48 @@ public class Randoms {
         return sum;
     }
 
+    public static int rob(int[] nums) {
+        if(nums.length<2) {
+            return nums[0];
+        }
+        int x= nums[0];
+        int y= nums[0]>nums[1] ? nums[0] : nums[1];
+        int z=y;
+
+        if(nums.length==2) {
+            return z;
+        }
+
+        for(int i=2; i<nums.length; i++) {
+            z = y>x+nums[i]? y:x+nums[i];
+            x=y;
+            y=z;
+        }
+        return z;
+    }
+
+    public static String countAndSay(int n) {
+        if(n==1)
+            return "1";
+        return countInt(countAndSay(n-1));
+    }
+
+    private static String countInt(String str){
+        char[] c = str.toCharArray();
+        StringBuilder s =  new StringBuilder();
+        int count=0;
+        for(int i=0;i<c.length-1;i++){
+            if(c[i]==c[i+1])
+                count++;
+            else{
+                s.append(count+1).append(c[i]);
+                count=0;
+            }
+        }
+
+        s.append(count+1).append(c[c.length-1]);
+        return s.toString();
+    }
 
     public static void main(String[] args) {
 
@@ -85,7 +129,10 @@ public class Randoms {
   //      System.out.println(singleNumber(new int[] {2,2,1,6,7,6,8,8,7}));
   //      System.out.println(Add(4, 8));
 
-        columnNumber("BZ");
+  //      columnNumber("BZ");
+  //      System.out.println(rob(new int[] {2,7,9,3,1}));
+
+        countAndSay(4);
 
     }
 }

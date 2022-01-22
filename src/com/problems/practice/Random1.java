@@ -5,6 +5,7 @@ package com.problems.practice;
 * Anagram
 * Is Happy Number
 * Pascal Triangle
+* Maximum SubArray
 * */
 
 import java.util.ArrayList;
@@ -127,11 +128,34 @@ public class Random1 {
         return list;
     }
 
+    public static int maximumSubArray(int[] arr) {
+        int max = arr[0];
+        int currMax = arr[0];
+
+        for (int i=1; i<arr.length; i++){
+            currMax = arr[i]+currMax > arr[i] ? arr[i]+currMax : arr[i];
+            max = currMax > max ? currMax : max;
+        }
+        return max;
+    }
+
+    public static int hammingWeight(int n) {
+        int count = 0;
+        while(n != 0) {
+            int rsb = n & -n;
+            n -= rsb;
+            count++;
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
       System.out.println(romanToInt("MCMIV"));
 //        System.out.println(isAnagram("anagram", "nagaram"));
 //        System.out.println(isHappy(19));
-
 //        System.out.println(pascalTriangle(5));
+        maximumSubArray(new int[]{-2,1,-3,4,-1,2,1,-5,4});
+
+        hammingWeight(00000000000000000000000000001011);
     }
 }
