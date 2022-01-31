@@ -57,7 +57,7 @@ public class Randoms {
         return nums[left];
     }
 
-    static int Add(int x, int y)
+    public static int Add(int x, int y)
     {
         while (y != 0)
         {
@@ -121,18 +121,43 @@ public class Randoms {
         return s.toString();
     }
 
+    public static int[] intersect(int[] nums1, int[] nums2) {
+        Arrays.sort(nums1);
+        Arrays.sort(nums2);
+
+        int[] intersection = new int[nums1.length<nums2.length?nums1.length:nums2.length];
+        int k=0;
+
+        for(int i=0, j=0; i<nums1.length && j<nums2.length;) {
+            if(nums1[i]<nums2[j]) {
+                i++;
+            }
+            else if(nums1[i]>nums2[j]) {
+                j++;
+            }
+            else {
+                intersection[k++]=nums1[i];
+                i++;
+                j++;
+            }
+        }
+        return intersection;
+    }
+
     public static void main(String[] args) {
 
 //        List<String> list = fizzbuzz(3);
 //        list.forEach(System.out::print);
 
-  //      System.out.println(singleNumber(new int[] {2,2,1,6,7,6,8,8,7}));
-  //      System.out.println(Add(4, 8));
+        System.out.println(singleNumber(new int[] {2,2,1,1,6,7,6,8,8,7,9}));
+        System.out.println(Add(8, 4));
 
   //      columnNumber("BZ");
   //      System.out.println(rob(new int[] {2,7,9,3,1}));
 
-        countAndSay(4);
+  //      countAndSay(4);
+
+        intersect(new int[]{1,2,2,1}, new int[]{2,2});
 
     }
 }

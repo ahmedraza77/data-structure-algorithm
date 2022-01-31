@@ -154,7 +154,7 @@ public class Random1 {
 //        System.out.println(isAnagram("anagram", "nagaram"));
 //        System.out.println(isHappy(19));
 //        System.out.println(pascalTriangle(5));
-        maximumSubArray(new int[]{-2,1,-3,4,-1,2,1,-5,4});
+//        maximumSubArray(new int[]{-2,1,-3,4,-1,2,1,-5,4});
 
         hammingWeight(00000000000000000000000000001011);
     }
